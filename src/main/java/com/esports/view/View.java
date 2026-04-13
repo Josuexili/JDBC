@@ -20,9 +20,6 @@ public class View {
         System.out.print("Nom de l'atleta: ");
         String nom = sc.nextLine().trim();
 
-        System.out.print("Codi de l'atleta: ");
-        int codi = Integer.parseInt(sc.nextLine().trim());
-
         System.out.println("Selecciona un esport:");
         llistaEsports(esports);
 
@@ -30,7 +27,6 @@ public class View {
         int codEsport = Integer.parseInt(sc.nextLine().trim());
 
         Atleta atleta = new Atleta(nom);
-        atleta.setCod(codi);
         atleta.setCodDeporte(codEsport);
 
         return atleta;
@@ -60,8 +56,6 @@ public class View {
         }
     }
 
-    // NOVA FUNCIÓ NECESSÀRIA (perquè buscarPorNombre() i atletasPorDeporte()
-    // retornen List<String>)
     public void llistaAtletes(List<String> llista) {
         if (llista.isEmpty()) {
             System.out.println("No hi ha resultats.");
